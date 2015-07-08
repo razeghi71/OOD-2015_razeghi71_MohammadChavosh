@@ -1,0 +1,11 @@
+#ifndef VIEWKNOWLEDGEUI_H
+#define VIEWKNOWLEDGEUI_H
+
+
+class ViewKnowledgeUI
+{
+public:
+    ViewKnowledgeUI();
+};
+
+#endif // VIEWKNOWLEDGEUI_H

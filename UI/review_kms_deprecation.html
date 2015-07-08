@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="less/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-rating/bootstrap-rating.min.js">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="page-header text-center">
+                <h1>بررسی درخواست منسوخ شدن مورد دانشی</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#" class="btn btn-success">تأیید درخواست</a>
+                </div>
+                <div class="col-md-6 text-left">
+                    <a href="#" class="text-danger" data-toggle="modal" data-target="#rejectModal">رد درخواست &nbsp;<span
+                            class="glyphicon glyphicon-alert"></span></a>
+                </div>
+            </div>
+            <br>
+            <p>
+                علت درخواست. بلاب بلاب بلاب.
+            </p>
+            <hr>
+            <h3>عنوان مورد دانشی</h3>
+            <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
+                شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیستری را برای طراحان رایانه ای و فرهنگ
+                پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و
+                شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل
+                دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+
+            <div class="tags">
+                <span class="label label-primary">برچسب ۱</span>
+                <span class="label label-primary">برچسب ۱</span>
+                <span class="label label-primary">برچسب ۱</span>
+            </div>
+            <br>
+
+            <div>
+                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> فایل الصاقی</a>
+                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> فایل الصاقی</a>
+                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> فایل الصاقی</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">رد درخواست</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="reject-reason">علت</label>
+                        <textarea class="form-control" name="reject-reason" id="reject-reason"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">لغو</button>
+                    <button type="button" class="btn btn-primary">رد درخواست</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </form>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="bower_components/bootstrap-rating/bootstrap-rating.min.js"></script>
+</body>
+</html>

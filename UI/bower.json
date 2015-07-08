@@ -1,0 +1,14 @@
+{
+  "name": "ood",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": ">=3.3",
+    "bootstrap3-wysihtml5-bower": "~0.3.3",
+    "bootstrap-multiselect": "~0.9.12",
+    "bootstrap-tagsinput": "~0.4.2",
+    "bootstrap-rating": "~1.2.0",
+    "bootstrap-datepicker": "~1.4.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.7.14"
+  }
+}
