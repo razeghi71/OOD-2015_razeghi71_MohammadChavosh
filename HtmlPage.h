@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<QWebFrame>
+#include "QPointer"
 
 namespace Ui {
     class HtmlPage;
@@ -21,7 +22,7 @@ public:
 
 protected:
     Ui::HtmlPage *ui;
-    QWebFrame *webFrame;
+    QPointer<QWebFrame> webFrame;
 
 protected slots:
     void goToSearchKnowledge();

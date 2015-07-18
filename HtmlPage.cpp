@@ -6,6 +6,7 @@
 #include "LoginUI.h"
 #include "UserCatalog.h"
 #include "AddUserUI.h"
+#include <QPointer>
 
 HtmlPage::HtmlPage(QString page_name) :
     QMainWindow(0),
