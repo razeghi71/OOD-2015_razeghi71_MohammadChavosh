@@ -24,7 +24,7 @@ void SearchKnowledgeUI::submit()
     QString tagList = getValueBySelector("#tags").toString();
     QSet<QString> tagSet = tagList.split(",").toSet();
 
-    QVector<KnowledgeItem> res = KnowledgeCatalog::getInstance()->searchInKnowledges(query,tagSet);
+    QVector<KnowledgeItem> res = KnowledgeCatalog::getInstance()->search(query,tagSet);
 
     //TODO : doSearchFromDB
     SearchKnowledgeResult *result = new SearchKnowledgeResult(res);

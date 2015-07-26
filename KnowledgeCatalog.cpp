@@ -28,7 +28,7 @@ void KnowledgeCatalog::addKnowledge(KnowledgeItem item)
     QSqlQuery *res = db->executeQuery(query);
 }
 
-QVector<KnowledgeItem> KnowledgeCatalog::searchInKnowledges(QString searchQuery, QSet<QString> tag)
+QVector<KnowledgeItem> KnowledgeCatalog::search(QString searchQuery, QSet<QString> tag)
 {
     QVector<KnowledgeItem> searchResult;
     DB *db = DB::getInstance();

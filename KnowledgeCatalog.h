@@ -13,7 +13,7 @@ private :
 public :
     static KnowledgeCatalog* getInstance();
     void addKnowledge(KnowledgeItem item);
-    QVector<KnowledgeItem> searchInKnowledges(QString searchQuery,QSet<QString> tagList);
+    QVector<KnowledgeItem> search(QString searchQuery,QSet<QString> tagList);
 };
 
 #endif
