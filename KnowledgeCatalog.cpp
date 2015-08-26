@@ -2,6 +2,8 @@
 #include "DB.h"
 #include <QDebug>
 #include <QSqlError>
+#include "TagCatalog.h"
+#include <QVector>
 
 KnowledgeCatalog::KnowledgeCatalog()
 {
@@ -15,10 +17,10 @@ KnowledgeCatalog* KnowledgeCatalog::getInstance()
 }
 
 
-void KnowledgeCatalog::addKnowledge(KnowledgeItem item)
+void KnowledgeCatalog::add(KnowledgeItem item)
 {
     DB *db = DB::getInstance();
-    QString query = QString("INSERT INTO `KnowledgeItem` VALUES (NULL,'%1','%2','%3','%4'); ").
+    QString query = QString("INSERT INTO `KnowledgeItem` VALUES (NULL,'%1','%2','%3','%4');").
             arg(item.getTitle(),
                 item.getText(),
                 item.getPublishTime().toString("yyyy-MM-ddTHH:MM"),
@@ -26,6 +28,32 @@ void KnowledgeCatalog::addKnowledge(KnowledgeItem item)
                 );
 
     QSqlQuery *res = db->executeQuery(query);
+    item.setId(res->lastInsertId().toInt());
+    QVector<Tag> tagList = item.getTags();
+
+    for ( QVector<Tag>::iterator it = tagList.begin();
+          it != tagList.end();
+          it++
+        )
+    {
+        Tag tag = *it;
+        TagCatalog::getInstance()->relateTagToKnowledge(tag,item);
+    }
+
+}
+
+KnowledgeItem KnowledgeCatalog::get(int id)
+{
+    DB *db = DB::getInstance();
+    QString query = QString("SELECT * from `KnowledgeItem` where `id`='%1'").arg(QString::number(id));
+    QSqlQuery *res = db->executeQuery(query);
+
+    if (res->next())
+    {
+        return KnowledgeItem::createKnowledgeBySqlQuery(res);
+    }
+    return KnowledgeItem();
+
 }
 
 QVector<KnowledgeItem> KnowledgeCatalog::search(QString searchQuery, QSet<QString> tag)
@@ -35,7 +63,7 @@ QVector<KnowledgeItem> KnowledgeCatalog::search(QString searchQuery, QSet<QStrin
     QString query = QString("SELECT * from `KnowledgeItem` where `title` LIKE '\%%1\%' OR `text` LIKE '\%%1\%'").
             arg(searchQuery);
 
-    qDebug() << query;
+//    qDebug() << query;
 
     QSqlQuery *res = db->executeQuery(query);
 

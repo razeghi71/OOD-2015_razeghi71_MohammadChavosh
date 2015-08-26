@@ -42,7 +42,7 @@
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="go">
@@ -51,11 +51,19 @@
     </property>
     <addaction name="search_kms"/>
     <addaction name="add_kms"/>
+    <addaction name="send_message"/>
+    <addaction name="add_kms_req"/>
+    <addaction name="review_kms_dep"/>
+    <addaction name="show_notifications"/>
    </widget>
    <widget class="QMenu" name="user">
     <property name="title">
      <string>کاربر</string>
     </property>
+    <addaction name="forgot_password"/>
+    <addaction name="edit_current_user"/>
+    <addaction name="change_password"/>
+    <addaction name="all_users"/>
     <addaction name="logout"/>
     <addaction name="separator"/>
     <addaction name="add_user"/>
@@ -93,6 +101,46 @@
    </property>
    <property name="visible">
     <bool>false</bool>
+   </property>
+  </action>
+  <action name="send_message">
+   <property name="text">
+    <string>ارسال پیغام</string>
+   </property>
+  </action>
+  <action name="add_kms_req">
+   <property name="text">
+    <string>افزودن نیازمندی دانشی</string>
+   </property>
+  </action>
+  <action name="change_password">
+   <property name="text">
+    <string>تغییر رمزعبور</string>
+   </property>
+  </action>
+  <action name="edit_current_user">
+   <property name="text">
+    <string>ویرایش کاربر</string>
+   </property>
+  </action>
+  <action name="forgot_password">
+   <property name="text">
+    <string>فراموشی رمز عبور</string>
+   </property>
+  </action>
+  <action name="review_kms_dep">
+   <property name="text">
+    <string>مرور درخواستهای نسخ</string>
+   </property>
+  </action>
+  <action name="all_users">
+   <property name="text">
+    <string>لیست تمامی کاربران</string>
+   </property>
+  </action>
+  <action name="show_notifications">
+   <property name="text">
+    <string>نمایش آگاهسازیها</string>
    </property>
   </action>
  </widget>

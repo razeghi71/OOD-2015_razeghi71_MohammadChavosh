@@ -1,14 +1,18 @@
 #include "DB.h"
 #include <QDebug>
 #include <QSqlError>
+#include "UserCatalog.h"
 
 DB::DB()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("kms.db");
+
     if ( !db.open() )
     {
         qFatal("can not connect to db")   ;
+    } else {
+//        qDebug() << "Database Openned Successfully";
     }
 }
 
@@ -22,6 +26,23 @@ void DB::initializeDBFirstTime()
     QFile *file = new QFile(":/sql/init.sql");
     file->open(QIODevice::ReadOnly | QIODevice::Text);
     executeQueriesFromFile(file);
+
+
+    /* test data */
+
+    User admin;
+    admin.setUsername("mohammad");
+    admin.setPassword("mohammad");
+    admin.setType(0);
+
+    User simple;
+    simple.setUsername("ali");
+    simple.setPassword("ali");
+    simple.setType(1);
+
+    UserCatalog::getInstance()->add(simple);
+    UserCatalog::getInstance()->add(admin);
+
     qDebug() << "initialized database";
 }
 
@@ -71,7 +92,7 @@ void DB::executeQueriesFromFile(QFile *file)
             query->exec(line);
         }
         if(!query->isActive()){
-            qDebug() << query->lastError();
+            qFatal(query->lastError().text().toStdString().c_str());
         }
     }
 }

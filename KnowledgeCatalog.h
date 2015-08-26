@@ -12,7 +12,8 @@ private :
     KnowledgeCatalog();
 public :
     static KnowledgeCatalog* getInstance();
-    void addKnowledge(KnowledgeItem item);
+    void add(KnowledgeItem item);
+    KnowledgeItem get(int id);
     QVector<KnowledgeItem> search(QString searchQuery,QSet<QString> tagList);
 };
 

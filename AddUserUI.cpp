@@ -12,6 +12,14 @@ AddUserUI::AddUserUI() : HtmlPage("add_user")
     connect(webFrame, SIGNAL(javaScriptWindowObjectCleared()),
             this, SLOT(populateJavaScriptWindowObject()));
 
+
+}
+
+
+
+void AddUserUI::populateJavaScriptWindowObject()
+{
+    webFrame->addToJavaScriptWindowObject("UserAdder",this);
 }
 
 
@@ -24,14 +32,11 @@ void AddUserUI::submit()
     user.setFamily( getValueBySelector("#last_name").toString() );
     user.setEmail(getValueBySelector("#email").toString());
     user.setNationalCode(getValueBySelector("#national_code").toString());
+    qDebug() << getSelectByValue("#type") ;
+    user.setType(getSelectByValue("#type").toInt());
     user.setPersonelCode(getValueBySelector("#personal_code").toString());
 
-    UserCatalog::getInstance()->registerUser(user);
+    UserCatalog::getInstance()->add(user);
     QMessageBox::information(this,"موفقیت","ثبت نام با موفقیت برگزار شد");
 
-}
-
-void AddUserUI::populateJavaScriptWindowObject()
-{
-    webFrame->addToJavaScriptWindowObject("UserAdder",this);
 }

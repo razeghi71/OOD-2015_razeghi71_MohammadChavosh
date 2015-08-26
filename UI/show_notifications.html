@@ -18,7 +18,8 @@
                 <h1>آگاه‌سازی‌های موجود</h1>
             </div>
             <div>
-                <div class="list-group">
+                <div class="list-group" id="results">
+<!--
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">پیغام جدید از فلانی</h4>
 
@@ -58,6 +59,7 @@
                             را بروزرسانی کرد.
                         </p>
                     </a>
+-->
                 </div>
             </div>
         </div>
@@ -67,5 +69,12 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 <script src="bower_components/bootstrap-rating/bootstrap-rating.min.js"></script>
+<script>
+function add_message_notif(id ,from, title)
+{
+	var msg = $('<a onclick="MsgLinker.goToViewMsg('+ id +')" class="list-group-item"><h4 class="list-group-item-heading">شما پغامی از '+from+' دارید</h4><p class="list-group-item-text">موضوع پیغام:'+title+'</p></a>"');
+	$("#results").append(msg);
+}
+</script>
 </body>
 </html>

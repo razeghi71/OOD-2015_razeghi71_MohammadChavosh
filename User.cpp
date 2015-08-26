@@ -62,15 +62,6 @@ void User::setNationalCode(const QString &value)
     nationalCode = value;
 }
 
-bool User::getAdmin() const
-{
-    return admin;
-}
-
-void User::setAdmin(bool value)
-{
-    admin = value;
-}
 
 int User::getId() const
 {
@@ -92,7 +83,7 @@ User User::createUserBySqlQuery(QSqlQuery *res)
     QString email = res->value("email").toString();
     QString national_code = res->value("national_code").toString();
     QString personel_code = res->value("personel_code").toString();
-    bool admin = res->value("admin").toInt();
+    int type = res->value("type").toInt();
 
     User user;
     user.setId(id);
@@ -103,7 +94,7 @@ User User::createUserBySqlQuery(QSqlQuery *res)
     user.setPersonelCode(personel_code);
     user.setName(name);
     user.setFamily(family);
-    user.setAdmin(admin);
+    user.setType(type);
 
     return user;
 
@@ -121,5 +112,31 @@ void User::setPersonelCode(const QString &value)
 User::User()
 {
     id = 0;
+    type = 3;
 }
+int User::getType() const
+{
+    return type;
+}
+
+void User::setType(int value)
+{
+    type = value;
+}
+
+bool User::isAdmin()
+{
+    return type == 0;
+}
+
+bool User::isGuru()
+{
+    return type == 1;
+}
+
+bool User::isUser()
+{
+    return type == 2;
+}
+
 

@@ -9,31 +9,23 @@
         <file>UI/template_footer.html</file>
         <file>UI/show_all_users.html</file>
         <file>UI/change_password.html</file>
-        <file>UI/show_project_tasks.html</file>
         <file>UI/search_kms_results.html</file>
-        <file>UI/search_letters_results.html</file>
         <file>UI/bower.json</file>
         <file>UI/show_all_kms_by_date.html</file>
         <file>UI/login.html</file>
         <file>UI/template_top.html</file>
         <file>UI/show_message.html</file>
-        <file>UI/add_role.html</file>
         <file>UI/add_kms_requirement.html</file>
-        <file>UI/assign_role_to_user.html</file>
         <file>UI/temp.html</file>
         <file>UI/add_user.html</file>
         <file>UI/show_notifications.html</file>
         <file>UI/show_kms_history.html</file>
         <file>UI/edit_user_profile.html</file>
         <file>UI/add_kms.html</file>
-        <file>UI/show_letter.html</file>
         <file>UI/show_kms_entry.html</file>
-        <file>UI/search_letters.html</file>
         <file>UI/update_kms.html</file>
         <file>UI/edit_user.html</file>
-        <file>UI/show_all_projects.html</file>
         <file>UI/review_kms_deprecation.html</file>
-        <file>UI/my_fucing_script.sh</file>
         <file>UI/less/variables.less</file>
         <file>UI/less/bootstrap.less</file>
         <file>UI/less/global.less</file>

@@ -18,70 +18,7 @@
             </div>
 
             <div id="results">
-                <div class="result">
-                    <div class="result-title">
-                        <h4><a href="#"><span class="glyphicon glyphicon-triangle-left"></span>عنوان یک مورد دانشی
-                            خاص</a></h4>
-                    </div>
-                    <div class="result-summary">
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            تکنولوژی مورد نیاز و ک...</p>
-                    </div>
-                    <div class="result-tags">
-                        <input type="text" data-role="tagsinput" value="برچسب۱,برچسب۲" disabled>
-                    </div>
-                </div>
-
-                <div class="result">
-                    <div class="result-title">
-                        <h4><a href="#"><span class="glyphicon glyphicon-triangle-left"></span>عنوان یک مورد دانشی
-                            خاص</a></h4>
-                    </div>
-                    <div class="result-summary">
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            تکنولوژی مورد نیاز و ک...</p>
-                    </div>
-                    <div class="result-tags">
-                        <input type="text" data-role="tagsinput" value="برچسب۱,برچسب۲" disabled>
-                    </div>
-                </div>
-
-                <div class="result">
-                    <div class="result-title">
-                        <h4><a href="#"><span class="glyphicon glyphicon-triangle-left"></span>عنوان یک مورد دانشی
-                            خاص</a></h4>
-                    </div>
-                    <div class="result-summary">
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            تکنولوژی مورد نیاز و ک...</p>
-                    </div>
-                    <div class="result-tags">
-                        <input type="text" data-role="tagsinput" value="برچسب۱,برچسب۲" disabled>
-                    </div>
-                </div>
-
-                <nav class="text-center">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                
             </div>
 
 
@@ -90,6 +27,21 @@
 </div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+function add_new_result(title, summary, tags,id )
+{
+	var result = $('<div class="result"></div>');
+	var resulttitle = $('<div class="result-title"><h4><a onclick="Viewer.viewPost('+id+')"><span class="glyphicon glyphicon-triangle-left">' + title + '</span></a></h4></div>');
+	var resultsummary = $('<div class="result-summary"><p>'+ summary +'</p></div>');
+	var resulttags = $('<div class="result-tags"><input type="text" data-role="tagsinput" value="'+ tags +'" disabled></div>');
+	
+	result.append(resulttitle).append(resultsummary).append(resulttags);
+	$('#results').append(result);
+}
+</script>
 <script src="bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
+	
+
 </body>
 </html>

@@ -4,7 +4,9 @@
 #include<QString>
 #include<QDateTime>
 #include <QSqlQuery>
+#include "Tag.h"
 #include "User.h"
+#include <QVector>
 
 class KnowledgeItem{
 public:
@@ -27,12 +29,16 @@ public:
 
     KnowledgeItem();
 
+    QVector<Tag> getTags() const;
+    void setTags(const QVector<Tag> &value);
+
 private:
     int id;
     QString title;
     QString text;
     QDateTime publishTime;
     User owner;
+    QVector<Tag> tags;
 
     // TODO : add Tag and file
 };

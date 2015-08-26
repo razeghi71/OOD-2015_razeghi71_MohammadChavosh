@@ -55,18 +55,20 @@ void KnowledgeItem::setId(int value)
 
 KnowledgeItem KnowledgeItem::createKnowledgeBySqlQuery(QSqlQuery *res)
 {
+    int id = res->value("id").toInt();
     QString title = res->value("title").toString();
     QString body = res->value("text").toString();
     QDateTime publish_time = res->value("publish_time").toDateTime();
 
     int owner = res->value("owner").toInt();
-    User ownerUser = UserCatalog::getInstance()->getUserById(owner);
+    User ownerUser = UserCatalog::getInstance()->get(owner);
 
 
     // TODO: add tag and file
 
     KnowledgeItem item;
 
+    item.setId(id);
     item.setTitle(title);
     item.setText(body);
     item.setPublishTime(publish_time);
@@ -78,5 +80,16 @@ KnowledgeItem KnowledgeItem::createKnowledgeBySqlQuery(QSqlQuery *res)
 
 KnowledgeItem::KnowledgeItem()
 {
-
+    id = 0;
 }
+QVector<Tag> KnowledgeItem::getTags() const
+{
+    return tags;
+}
+
+void KnowledgeItem::setTags(const QVector<Tag> &value)
+{
+    tags = value;
+}
+
+

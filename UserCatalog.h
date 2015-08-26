@@ -7,15 +7,20 @@
 
 class UserCatalog{
 public :
-    static User LoggedInUser;
     bool login(QString username,QString password);
-    User getUserById(int id);
-    void registerUser(User user);
+    User get(int id);
+    User get(QString username);
+    User getByEmail(QString email);
+    void add(User user);
+    QVector<User> all();
+    void remove(User user);
+
     static UserCatalog* getInstance();
     static User getLoggedInUser();
 
 
 private :
+    static User LoggedInUser;
     UserCatalog();
     void initLoggedInUser(QSqlQuery* res);
 };

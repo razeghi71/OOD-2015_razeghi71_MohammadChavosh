@@ -25,9 +25,6 @@ public:
     QString getNationalCode() const;
     void setNationalCode(const QString &value);
 
-    bool getAdmin() const;
-    void setAdmin(bool value);
-
     int getId() const;
     void setId(int value);
 
@@ -38,6 +35,13 @@ public:
 
     User();
 
+    int getType() const;
+    void setType(int value);
+
+    bool isAdmin();
+    bool isGuru();
+    bool isUser();
+
 private :
     int id;
     QString username;
@@ -47,7 +51,7 @@ private :
     QString email;
     QString nationalCode;
     QString personelCode;
-    bool admin;
+    int type;
 
 };
 

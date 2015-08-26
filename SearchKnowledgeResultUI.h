@@ -12,6 +12,7 @@ public:
     SearchKnowledgeResult(QVector<KnowledgeItem> res);
 public slots:
     void populateJavaScriptWindowObject();
+    void viewPost(int id);
 
 private:
     QVector<KnowledgeItem> result;

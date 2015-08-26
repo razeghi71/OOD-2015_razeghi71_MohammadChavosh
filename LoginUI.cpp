@@ -13,8 +13,6 @@ LoginUI::LoginUI() : HtmlPage("login")
 {
     connect(webFrame, SIGNAL(javaScriptWindowObjectCleared()),
             this, SLOT(populateJavaScriptWindowObject()));
-    ui->go->setEnabled(false);
-    ui->logout->setEnabled(false);
 }
 
 void LoginUI::populateJavaScriptWindowObject()
@@ -27,7 +25,7 @@ void LoginUI::submit()
     QString username = getValueBySelector("#username").toString();
     QString password = getValueBySelector("#password").toString();
 
-//    DB::getInstance()->initializeDBFirstTime();
+//    DB::getInstance()->initializeDBF  irstTime();
 
     if ( UserCatalog::getInstance()->login(username,password) )
     {

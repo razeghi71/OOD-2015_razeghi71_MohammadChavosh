@@ -26,7 +26,6 @@ void SearchKnowledgeUI::submit()
 
     QVector<KnowledgeItem> res = KnowledgeCatalog::getInstance()->search(query,tagSet);
 
-    //TODO : doSearchFromDB
     SearchKnowledgeResult *result = new SearchKnowledgeResult(res);
     result->show();
     this->close();
